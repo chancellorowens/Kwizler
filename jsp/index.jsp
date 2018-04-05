@@ -67,5 +67,38 @@ if(request.getParameter("name")!=null){
 diaryBean.addEntry();
 }
 %>
+
+
+<h1> All Previous Diary Entries: </h1>
+
+<%
+String [] completeLog= new String[0];
+int stopper=0;
+completeLog=diaryBean.getTable();%>
+<table>
+<tr>
+<td>Name</td>
+<td>Entry</td>
+<td>Date</td>
+
+</tr>
+<% int i=0;
+stopper= (completeLog.length)-1;
+%>
+
+<c:forEach var="i" begin="0" end= "<%=stopper%>">
+<c:if test="${i%3==0}">
+             <tr>
+	     </c:if>
+	     <td>  <%=completeLog[i]%></td>
+	     <c:if test="${i%3==2 }">
+	     </tr>
+	     </c:if>
+	     <% i++;%>
+	     </c:forEach>
+
+</table>
+
+
 </html>
 
