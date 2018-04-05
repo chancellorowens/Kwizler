@@ -94,6 +94,7 @@ public class Diary{
 	newDBRow[1]=newEntry;
 	newDBRow[2]=newDate;
 	myManager.addDBEntry(newDBRow);
+	table=myManager.doMainQuery();
     }//addEntry
     
 }//Diary.java      
