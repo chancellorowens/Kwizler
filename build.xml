@@ -8,7 +8,7 @@
    <target name="compile-implementation" depends="clean">
      <javac srcdir="src" destdir="classes" includeantruntime="true"/>
    </target>
-
+<!--
    <target name="compile-test" depends="compile-implementation">
      <javac srcdir="test_src" destdir="test_classes" includeantruntime="true" >
        <classpath>
@@ -27,8 +27,8 @@
        <formatter type="plain" usefile="false" />
      </junit>
    </target>
-
-   <target name="deploy" depends="run-test">
+-->
+   <target name="deploy" depends="compile-implementation">
      <move file="classes/kwizler" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/classes"/>
      <copy file="jsp/index.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
    </target>
