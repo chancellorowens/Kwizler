@@ -4,15 +4,7 @@
   <title>
    Kwizler
   </title>
-  <style>
-    .WelcomeMessage{background-color:teal; font-size: 26pt; width:1200pt}
-    .tile{display:inline-block; width:205px;
-    text-align: center;
-    vertical-align: middle;
-    height:150px;
-    line-height: 50px;background-color:silver; font-size: 18pt}
-    .SetDesc{background-color:gray; font-size:20pt; width:1200pt}
-  </style>
+  <link rel="stylesheet" href="styles.css">
  </head>
  <body>
   <div class ="WelcomeMessage">

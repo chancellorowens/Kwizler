@@ -31,6 +31,7 @@
    <target name="deploy" >
      <!--     <move file="classes/kwizler" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/classes"/>
 	  -->
-<copy file="jsp/index.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
+     <copy file="jsp/index.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
+     <copy file="css/styles.css" todir="/var/lib/tomcat7/webapps/Kwizler" />
    </target>
 </project>
