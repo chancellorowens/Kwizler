@@ -3,7 +3,7 @@
   <!-- HELLLLLLLOOOOO -->
 <!--TEST ADDING A COMMENT-->
 
-
+<!--
    <target name="clean">
       <delete dir="./classes/kwizler" />
       <delete dir="./test_classes/kwizler" />
@@ -32,9 +32,9 @@
        <formatter type="plain" usefile="false" />
      </junit>
    </target>
-
-   <target name="deploy" depends="run-test" >
-        <move file="classes/kwizler" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/classes"/>
+-->
+   <target name="deploy">
+   <!--     <move file="classes/kwizler" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/classes"/> -->
 	  
      <copy file="jsp/index.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
      <copy file="css/styles.css" todir="/var/lib/tomcat7/webapps/Kwizler" />
