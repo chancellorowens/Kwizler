@@ -5,7 +5,8 @@
    Kwizler
   </title>
   <link rel="stylesheet" href="styles.css">
- </head>
+  <script src="script.js"></script>
+  </head>
  <body>
   <div class ="WelcomeMessage">
        </br>
