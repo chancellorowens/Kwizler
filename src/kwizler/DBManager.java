@@ -17,7 +17,7 @@ public class DBManager {
      */
     public DBManager () throws SQLException, ClassNotFoundException{
 	Class.forName("com.mysql.jdbc.Driver");
-	conn= DriverManager.getConnection("jdbc:mysql://172.17.149.214/vocabSets" ,"root","csci4300");
+	conn= DriverManager.getConnection("jdbc:mysql://localhost/vocabSets" ,"root","csci4300");
 	if(conn!=null){
 	    status="Established Connection";
       	}//if
