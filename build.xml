@@ -1,5 +1,6 @@
 <project name="Kwizler" default="deploy">
-<!--
+<!--TEST ADDING A COMMENT-->
+ <!--
    <target name="clean">
       <delete dir="./classes/project" />
       <delete dir="./test_classes/project" />
