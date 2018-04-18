@@ -19,10 +19,10 @@
 Available Vocabulary Categories:
 </br>
 </div>
-    <div class = "tile">
+    <div class = "tile" onclick="displayMath();">
     	</br>
 	Math
-	</br>
+	</br>		
     </div>    
     <div class = "tile">
       </br>
@@ -49,6 +49,19 @@ Available Vocabulary Categories:
       	   </br>
 	   Foreign Language
 	   </br>
+      </div>
+      <br>
+      <div class = "catMth">
+      	   Trigonometry
+      </div>
+      <div class = "catMth">
+      	   Geometry
+      </div>
+      <div class = "catMth">
+      	   Algebra
+      </div>
+      <div class = "catMth">
+      	   Calculus
       </div>
  </body>
 </html>

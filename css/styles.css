@@ -19,3 +19,14 @@
     font-size:20pt;
     width:1200pt;
 }
+.catMth {
+    display:inline-block;
+    width:150px;
+    text-align: center;
+    vertical-align: middle;
+    height:100px;
+    line-height: 50px;
+    background-color: gray;
+    font-size: 16pt;
+    margin: 10px;
+}
