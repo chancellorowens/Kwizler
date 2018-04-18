@@ -6,16 +6,17 @@ import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.lang.ClassNotFoundException;
 
 public class Kwizler {
-    DBMangager db;
-    public static void main(String[] args){
+    DBManager db;
+    public static void main(String[] args) throws SQLException, ClassNotFoundException{
 	DBManager db = new DBManager();
     }
     /*
       Contains all the functioallity for adding a new sub-category for a subject
     */
-    public void addVocabList(){
+      public void addVocabList(){
 
     }
     /*
@@ -27,7 +28,7 @@ public class Kwizler {
     /*
       Gets all the entries in a sub-category table ready to be viewed in the jsp page
     */
-    public String[][] viewVocabList(String vocabListName){
+    /*public String[][] viewVocabList(String vocabListName){
 	PreparedStatement showStatement = conn.prepareStatement("SELECT * FROM ?");
 	searchStatement.setString(1,vocabListName);
 	rs = searchStatement.executeQuery();
@@ -37,5 +38,5 @@ public class Kwizler {
 	    resultString[1][i] = rs.getString(2);
 	}	
     }
-	
+*/	
 }
