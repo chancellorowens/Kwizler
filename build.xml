@@ -1,5 +1,12 @@
 <project name="Kwizler" default="deploy">
 
+<<<<<<< HEAD
+=======
+  <!-- HELLLLLLLOOOOO -->
+<!--TEST ADDING A COMMENT-->
+
+
+>>>>>>> 6511a1e2c378fb80fbb30f1bae596c00a9fee1b3
    <target name="clean">
       <delete dir="./classes/kwizler" />
       <delete dir="./test_classes/kwizler" />
@@ -28,8 +35,12 @@
        <formatter type="plain" usefile="false" />
      </junit>
    </target>
+<<<<<<< HEAD
 -->
    <target name="deploy" depends="compile-implementation">
+=======
+   <target name="deploy" depends="run-test">
+>>>>>>> 6511a1e2c378fb80fbb30f1bae596c00a9fee1b3
    <!--     <move file="classes/kwizler" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/classes"/> -->
 	  
      <copy file="jsp/index.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
