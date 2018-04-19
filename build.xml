@@ -1,9 +1,5 @@
 <project name="Kwizler" default="deploy">
 
-  <!-- HELLLLLLLOOOOO -->
-<!--TEST ADDING A COMMENT-->
-
-<!--
    <target name="clean">
       <delete dir="./classes/kwizler" />
       <delete dir="./test_classes/kwizler" />
@@ -12,7 +8,7 @@
    <target name="compile-implementation" depends="clean">
      <javac srcdir="src" destdir="classes" includeantruntime="true"/>
    </target>
-
+<!--
    <target name="compile-test" depends="compile-implementation">
      <javac srcdir="test_src" destdir="test_classes" includeantruntime="true" >
        <classpath>
@@ -33,7 +29,7 @@
      </junit>
    </target>
 -->
-   <target name="deploy">
+   <target name="deploy" depends="compile-implementation">
    <!--     <move file="classes/kwizler" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/classes"/> -->
 	  
      <copy file="jsp/index.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
