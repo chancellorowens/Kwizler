@@ -13,7 +13,7 @@ public class DBManager {
 
 
     /*This is the constructor for the DBManager class.                                                  
-     *It creates a connection to the database and calls the main query (all the data entries).          
+     *It creates a connection to the database and calls the main query
      */
     public DBManager () throws SQLException, ClassNotFoundException{
 	Class.forName("com.mysql.jdbc.Driver");
@@ -24,7 +24,7 @@ public class DBManager {
     }//DBManager
 
 
-    /*This is the getter method for connection                                                        
+    /*This is the getter method for connection                               
      */
     public Connection getConn() throws SQLException, ClassNotFoundException{
 	return conn;
@@ -37,4 +37,4 @@ public class DBManager {
 	return status;
     }//getStatus
 
-}
+}//DBManager
