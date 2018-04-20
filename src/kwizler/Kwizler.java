@@ -1,5 +1,3 @@
-//Java file 
-// Java file for managing the database.
 package kwizler;
 
 import java.sql.*;
@@ -13,21 +11,28 @@ public class Kwizler {
     DBManager db;
     String[][] vocabList = new String[2][25]; 
 
+    /*This is the constructor for the Kwizler class. It creates a new 
+     *of the DBManager.
+     */
     public Kwizler() throws ClassNotFoundException, SQLException{
 	db = new DBManager();
-    }
+    }//Kwizler
+    
     /*
       Contains all the functioallity for adding a new sub-category for a subject
     */
     public void setVocabList(String tableName, String[][] vocab) throws SQLException{
 	String query = "CREATE TABLE " + tableName + " (Word varchar(255), definition varchar(255));";
-    }
+    }//setVocabList
+    
     /*
       Creates a new table filled with vocab words and definitions for a anew sub-category
     */
     public void createVocabListTable() throws SQLException{
 	
-    }
+    }//createVocabListTable
+
+
     /*
       Gets all the entries in a sub-category table ready to be viewed in the jsp page
     */
@@ -39,11 +44,12 @@ public class Kwizler {
 	    
 	String [][] resultString = new String[2][25];
 	for(int i = 0; rs != null && rs.next(); i++){
+	    //generates the ith vocab word with the matching ith definition in a 2D String Array.
 	    resultString[0][i] = rs.getString(1);//should be the vocab word 
 	    resultString[1][i] = rs.getString(2);
-	}
+	}//for
 	vocabList = resultString;
 	return vocabList;
-    }
+    }//getVocabList
 	
-}
+}//Kwizler
