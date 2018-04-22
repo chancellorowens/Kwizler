@@ -37,8 +37,10 @@ public class Kwizler {
       Gets all the entries in a sub-category table ready to be viewed in the jsp page
     */
 	
-    public String[][] getVocabList(String vocabListName) throws SQLException{
-	PreparedStatement showStatement = db.conn.prepareStatement("SELECT * FROM ?");
+    public String[][] getVocabList(String vocabListName) throws SQLException, ClassNotFoundException{
+	Connection conn= db.getConn();
+	String query="SELECT * FROM ? ";
+	PreparedStatement showStatement = conn.prepareStatement(query);
 	showStatement.setString(1,vocabListName);
 	ResultSet rs = showStatement.executeQuery();
 	    
@@ -49,7 +51,7 @@ public class Kwizler {
 	    resultString[1][i] = rs.getString(2);
 	}//for
 	vocabList = resultString;
-	return vocabList;
+	return resultString;
     }//getVocabList
 	
 }//Kwizler

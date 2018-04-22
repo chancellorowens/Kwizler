@@ -1,0 +1,47 @@
+<%@page contentType="text/html;charset=UTF-8" import="kwizler.Kwizler" %>
+<%@page contentType="text/html;charset=UTF-8" import="kwizler.DBManager" %>
+<%@page contentType="text/html;charset=UTF-8"%>
+<html>
+<head>
+<title>
+Study Vocab Set
+</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+<script>
+	var visible=true;
+	function ShowTerm(currentID){
+	if (visible==true){
+	   document.getElementById(currentID).style.display = "none";
+	   visible=false;
+	}else{
+	   document.getElementById(currentID).style.display="inline-block";
+	   visible=true;
+	}
+	}
+
+
+
+
+</script>
+</head>
+<body>
+<div class ="WelcomeMessage">
+</br>
+Click on the definition tiles to see the vocabulary term!
+</br>
+</br>
+</div>
+<% Kwizler kwiz= new Kwizler();
+String [][] currentVocab=kwiz.getVocabList("calculus");
+int counter=0;
+%>
+
+<div onclick=ShowTerm() id="<%=counter%>">
+ Term <%=counter%> : <%=currentVocab[0][0]%>
+ Definition<%=counter%> :<%=currentVocab[0][1]%>
+</div>
+
+
+</body>
+</html>
