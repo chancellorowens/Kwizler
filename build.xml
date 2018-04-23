@@ -40,5 +40,9 @@
      <copy file="jsp/addVocab.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
      <copy file="jsp/studyVocab.jsp" todir="/var/lib/tomcat7/webapps/Kwizler" />
      <copy file="script/script.js" todir="/var/lib/tomcat7/webapps/Kwizler" />
+
+     <copy file="lib/jstl-1.2.jar" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/lib"/>    
+     <copy file="lib/mysql-connector-java-5.1.46.jar" todir="/var/lib/tomcat7/webapps/Kwizler/WEB-INF/lib"/>
+     
    </target>
 </project>

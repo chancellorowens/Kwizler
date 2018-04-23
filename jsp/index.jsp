@@ -1,4 +1,7 @@
-<%@page contentType="text/html;charset=UTF-8"%>
+<%@page contentType="text/html;charset=UTF-8" import="kwizler.*" %>
+<%@page import="kwizler.Kwizler"%>
+<%@page import="java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
  <head>
   <title>
@@ -8,6 +11,9 @@
   <script src="script.js"></script>
   </head>
  <body>
+   <jsp:useBean id="kwizlerBean" class="kwizler.Kwizler"></jsp:useBean>
+   <jsp:setProperty name="kwizlerBean" property="*" />
+   
   <div class ="WelcomeMessage">
        </br>
    Hello. Welcome to Kwizler- an online vocabulary learning tool!
