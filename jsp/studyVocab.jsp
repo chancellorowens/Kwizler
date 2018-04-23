@@ -31,6 +31,7 @@ Study Vocab Set
 	width:1200pt;
 	}
 	.term {
+	
 	display:inline-block;
 	width:150px;
 	text-align: center;
@@ -62,12 +63,12 @@ Study Vocab Set
 <script>
 <script>
 	var visible=false;
-	function ShowTerm(currentID){
+	function ShowTerm(){
 	if (visible==true){
-	   document.getElementById(currentID).style.visibility= "hidden";
+	   Document.getElementById(term).style.visibility= "hidden";
 	   visible=false;
 	}else{
-	   document.getElementById(currentID).style.visibility="visible";
+	   Document.getElementById(term).style.visibility="visible";
 	   visible=true;
 	}
 	}
@@ -91,11 +92,11 @@ int counter=0;
 for(int i=0; i<25; i++){
 %>
 
-<div id= "Term" class="term">
+<div id="term" class="term">
      Term <%=counter+1 %> :
      </br><%=currentVocab[0][counter]%>
 </div>
-<div onclick=ShowTerm("Term" ) id="definition" class="definition">
+<div onclick="ShowTerm()" id="definition" class="definition">
      Definition <%=counter+1%> :
      </br>
      <%=currentVocab[1][counter]%>
