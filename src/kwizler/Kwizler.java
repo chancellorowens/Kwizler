@@ -39,13 +39,13 @@ public class Kwizler {
 	
     public String[][] getVocabList(String vocabListName) throws SQLException, ClassNotFoundException{
 	Connection conn= db.getConn();
-	String query="SELECT * FROM ? ";
+	String query="SELECT * FROM calculus ";
 	PreparedStatement showStatement = conn.prepareStatement(query);
-	showStatement.setString(1,vocabListName);
+	//showStatement.setString(1,vocabListName);
 	ResultSet rs = showStatement.executeQuery();
 	    
 	String [][] resultString = new String[2][25];
-	for(int i = 0; rs != null && rs.next(); i++){
+	for(int i = 0; rs.next(); i++){
 	    //generates the ith vocab word with the matching ith definition in a 2D String Array.
 	    resultString[0][i] = rs.getString(1);//should be the vocab word 
 	    resultString[1][i] = rs.getString(2);

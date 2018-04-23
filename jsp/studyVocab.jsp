@@ -36,15 +36,16 @@ Click on the definition tiles to see the vocabulary term!
 String vocabSet="calculus";
 String [][] currentVocab=kwiz.getVocabList(vocabSet);
 int counter=0;
+for(int i=0; i<25; i++){
 %>
-<c:forEach var="i" begin="0" end="24">
-<div id= "Term: <%=counter%>"> Term <%=counter+1 %> : <%=currentVocab[0][counter]%>
+
+<div id= "Term: <%=counter%>">
+     Term <%=counter+1 %> : <%=currentVocab[0][counter]%>
 </div>
 <div onclick=ShowTerm("Term: <%=counter%>" )>
- Definition <%=counter+1%> :<%=currentVocab[1][counter]%>
+     Definition <%=counter+1%> :<%=currentVocab[1][counter]%>
 </div>
-<% counter++;%>
-</c:forEach>
-
+	<% counter++;
+}//for%>
 </body>
 </html>
