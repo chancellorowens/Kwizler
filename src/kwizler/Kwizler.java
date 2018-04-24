@@ -23,7 +23,7 @@ public class Kwizler {
     */
     public void setVocabList(String tableName, String[][] vocab) throws ClassNotFoundException,SQLException{
 	if (tableName==null){
-	    tableName="empty";
+	    tableName="empty2";
 	}
 	//	tableName="newTableTest";
 	String query = "CREATE TABLE " + tableName + " (term varchar(255), definition varchar(255));";

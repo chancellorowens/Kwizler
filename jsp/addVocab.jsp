@@ -24,7 +24,7 @@
 		vocabSet[1][i]=request.getParameter("definition"+termValue);
 	   }//for
 	   Kwizler myKwiz= new Kwizler();
-	   myKwiz.setVocabList(request.getParameter("addTerms"), vocabSet);
+	   myKwiz.setVocabList(request.getParameter("VocabSetName"), vocabSet);
 	%>
 
 
