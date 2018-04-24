@@ -18,13 +18,13 @@ public class Kwizler {
 	db = new DBManager();
     }//Kwizler
     
-    /*
-      Contains all the functioallity for adding a new sub-category for a subject
+    /*                                                                                                                 
+      Creates a new table filled with vocab words and definitions for a anew sub-category                             
     */
     public void setVocabList(String tableName, String[][] vocab) throws ClassNotFoundException,SQLException{
 	if (tableName==null){
-	    tableName="empty2";
-	}
+	    tableName="test4";
+	}    
 	//	tableName="newTableTest";
 	String query = "CREATE TABLE " + tableName + " (term varchar(255), definition varchar(255));";
 	Connection conn= db.getConn();
@@ -35,17 +35,26 @@ public class Kwizler {
 		showStatement= conn.prepareStatement(newQuery);
 		showStatement.execute();
 		
+	
 	}
-
 	
     }//setVocabList
     
     /*
-      Creates a new table filled with vocab words and definitions for a anew sub-category
+      Edits a category table to include the new vocab list title. 
     */
-    public void createVocabListTable() throws SQLException{
+    public void addVocabListToTable(String setName, String categoryName) throws ClassNotFoundException,SQLException{
+	if(setName==null){
+	    setName="test";
+	}    
+	String query="insert into "+categoryName+" (vocabSet) values("+ setName+") ;";
+	Connection conn=db.getConn();
+	PreparedStatement showStatement= conn.prepareStatement(query);
+	showStatement.execute();
+
+
 	
-    }//createVocabListTable
+    }//addVocabListToTable
 
 
     /*

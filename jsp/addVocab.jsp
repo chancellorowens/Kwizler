@@ -25,7 +25,7 @@
 	   }//for
 	   Kwizler myKwiz= new Kwizler();
 	   myKwiz.setVocabList(request.getParameter("VocabSetName"), vocabSet);
-	%>
+	   %>
 
 
 	}//createdSet
@@ -40,6 +40,11 @@
 	</br>
 	</br>
 	
+
+
+
+	</br>
+	</br>
 	<input type="text" name="term1" placeholder="Term">
 	<input type="text" name="definition1" placeholder="Definition">
 	</br>
