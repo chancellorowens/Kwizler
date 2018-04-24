@@ -6,7 +6,6 @@
 <title>
 Study Vocab Set
 </title>
-<link rel="stylesheet" href="styles.css">
 <style>
 	div{display:inline;}
 	.WelcomeMessage {
@@ -31,7 +30,7 @@ Study Vocab Set
 	width:1200pt;
 	}
 	.term {
-	
+	visibility: hidden;
 	display:inline-block;
 	width:150px;
 	text-align: center;
@@ -60,16 +59,13 @@ Study Vocab Set
 
 
 </style>
-<script>
-<script>
-	var visible=false;
-	function ShowTerm(){
-	if (visible==true){
-	   Document.getElementById(term).style.visibility= "hidden";
-	   visible=false;
+<script type="text/javascript" language="javascript">	
+	function ShowTerm(idVar){
+	var elementToChange= document.getElementById(idVar);
+	if (elementToChange.style.visibility=="visible"){
+	   elementToChange.style.visibility= "hidden";
 	}else{
-	   Document.getElementById(term).style.visibility="visible";
-	   visible=true;
+	   elementToChange.style.visibility="visible";
 	}
 	}
 
@@ -92,11 +88,11 @@ int counter=0;
 for(int i=0; i<25; i++){
 %>
 
-<div id="term" class="term">
+<div id="<%=i%>" class="term">
      Term <%=counter+1 %> :
      </br><%=currentVocab[0][counter]%>
 </div>
-<div onclick="ShowTerm()" id="definition" class="definition">
+<div id="definition" onclick='ShowTerm("<%=i%>");' class="definition">
      Definition <%=counter+1%> :
      </br>
      <%=currentVocab[1][counter]%>
