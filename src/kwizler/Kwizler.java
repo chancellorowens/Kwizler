@@ -25,13 +25,13 @@ public class Kwizler {
 	if (tableName==null){
 	    tableName="empty";
 	}
-	tableName="newTableTest";
+	//	tableName="newTableTest";
 	String query = "CREATE TABLE " + tableName + " (term varchar(255), definition varchar(255));";
 	Connection conn= db.getConn();
 	PreparedStatement showStatement = conn.prepareStatement(query);
-	
+	showStatement.execute();
 	for(int i=0; i<25; i++){
-	    String newQuery="insert into" + tableName + "(term, definition) values("+vocab[0][i]+","+vocab[1][i]+");";
+	    String newQuery="insert into " + tableName + "(term, definition) values("+vocab[0][i]+","+vocab[1][i]+");";
 		showStatement= conn.prepareStatement(newQuery);
 		showStatement.execute();
 		
