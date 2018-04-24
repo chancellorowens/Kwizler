@@ -53,11 +53,6 @@ Study Vocab Set
 	font-size: 16pt;
 	margin: 10px;
 	}
-
-
-
-
-
 </style>
 <script type="text/javascript" language="javascript">	
 	function ShowTerm(idVar){

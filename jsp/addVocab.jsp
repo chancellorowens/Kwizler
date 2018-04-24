@@ -1,8 +1,28 @@
 <%@page contentType="text/html;charset=UTF-8"%>
+<style>
+	div{display:inline;}
+	h1{
+	background-color:teal;
+	font-size: 26pt;
+	width:1200pt;
+	}
+	html,h2,form{
+	background-color:silver;
+	font-size: 18pt;
+	margin: 10px;
+	}
+
+</style>
+
 <html>
 
-Vocabulary Set:
+<h1>Vocabulary Set:</h1>
+<h2>Please add in 25 terms and definitions.</h2>
 <form>
+	Set Name: <input type="text" name="VocabSetName">
+	</br>
+	</br>
+	
 	<input type="text" name="term1" placeholder="Term">
 	<input type="text" name="definition1" placeholder="Definition">
 	</br>
