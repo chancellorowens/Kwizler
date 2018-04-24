@@ -1,4 +1,5 @@
 <%@page contentType="text/html;charset=UTF-8"%>
+<%@page import="kwizler.Kwizler"%>
 <style>
 	div{display:inline;}
 	h1{
@@ -13,7 +14,23 @@
 	}
 
 </style>
+<script>
 
+	function createdSet(){
+	<% String [][] vocabSet=new String [2][25];
+	   for( int i=0; i<25; i++){
+	   	int termValue=i+1;
+	   	vocabSet[0][i]=request.getParameter("term"+termValue);
+		vocabSet[1][i]=request.getParameter("definition"+termValue);
+	   }//for
+	   Kwizler myKwiz= new Kwizler();
+	   myKwiz.setVocabList(request.getParameter("addTerms"), vocabSet);
+	%>
+
+
+	}//createdSet
+
+</script>
 <html>
 
 <h1>Vocabulary Set:</h1>
@@ -120,7 +137,7 @@
 	</br>
 	</br>
 
-	<input type="submit" name="addTerms" placeholder="Save Set">
+	<input type="submit" name="addTerms" onclick="createdSet()" placeholder="Save Set">
 
 
 </form>

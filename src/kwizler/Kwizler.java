@@ -22,15 +22,19 @@ public class Kwizler {
       Contains all the functioallity for adding a new sub-category for a subject
     */
     public void setVocabList(String tableName, String[][] vocab) throws ClassNotFoundException,SQLException{
+	if (tableName==null){
+	    tableName="empty";
+	}
+	tableName="newTableTest";
 	String query = "CREATE TABLE " + tableName + " (term varchar(255), definition varchar(255));";
 	Connection conn= db.getConn();
 	PreparedStatement showStatement = conn.prepareStatement(query);
-	ResultSet rs = showStatement.executeQuery();
 	
 	for(int i=0; i<25; i++){
 	    String newQuery="insert into" + tableName + "(term, definition) values("+vocab[0][i]+","+vocab[1][i]+");";
 		showStatement= conn.prepareStatement(newQuery);
-	    rs= showStatement.executeQuery();
+		showStatement.execute();
+		
 	}
 
 	
