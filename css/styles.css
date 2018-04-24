@@ -3,6 +3,9 @@
     font-size: 26pt;
     width:1200pt;
 }
+.jumbotron  {
+    background-color: teal;
+}
 .tile {
     display:inline-block;
     width:205px;
