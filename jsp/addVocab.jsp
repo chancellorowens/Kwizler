@@ -32,7 +32,9 @@
 	   Kwizler myKwiz= new Kwizler();
 	   String vocabSetName= request.getParameter("VocabSetName")+"";
 	   if(vocabSet!=null){
-	   myKwiz.setVocabList(vocabSetName, vocabSet);
+	   myKwiz.setTableName(vocabSetName);
+	   myKwiz.setVocabSet(vocabSet);
+	   myKwiz.setVocabList();
 	   }
 	   %>
 
@@ -44,7 +46,7 @@
 
 <h1>Vocabulary Set:</h1>
 <h2>Please add in 25 terms and definitions.</h2>
-<form>
+<form action=addVocab.jsp method=GET>
 	Set Name: <input type="text" name="VocabSetName">
 	</br>
 	</br>

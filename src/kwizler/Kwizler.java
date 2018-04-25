@@ -10,23 +10,44 @@ public class Kwizler {
     
     DBManager db;
     String[][] vocabList = new String[2][25]; 
-
+    String currentTableName="";
+    
     /*This is the constructor for the Kwizler class. It creates a new 
      *of the DBManager.
      */
     public Kwizler() throws ClassNotFoundException, SQLException{
 	db = new DBManager();
     }//Kwizler
-    
+
+    public void setTableName(String tableName){
+	currentTableName=tableName;
+    }
+
+    public void setVocabSet(String [][] myVocabSet){
+	for(int i=0; i<25; i++){
+	    vocabList[0][i]=myVocabSet[0][i];
+	    vocabList[1][i]=myVocabSet[1][i];
+	}
+    }
+    public String [][] getVocabSet(){
+	returns vocabList;
+    }
+
+    public String  getTableName(){
+	returns currentTableName;
+    }
     /*                                                                                                                 
       Creates a new table filled with vocab words and definitions for a anew sub-category                             
     */
-    public void setVocabList(String tableName, String[][] vocab) throws ClassNotFoundException,SQLException{
-	if (tableName=="/'null/'"||tableName=="NULL" || tableName==null || tableName==""||tableName=="null"){
+    public void setVocabList() throws ClassNotFoundException,SQLException{
+	/*String problemString="'" +"null"+"'";
+	if (tableName==problemString||tableName=="NULL" || tableName==null || tableName==""||tableName=="null"){
 	    tableName="test";
 	}
-	//	tableName="weFoundAProblem";
-	//		tableName="newTableTest";
+	*/
+		String tableName= getTableName();
+		String [][] vocab= getVocabSet();
+		//		tableName="newTableTest";
 	Connection conn= db.getConn();
 		String query = "CREATE TABLE ? (term varchar(255), definition varchar(255));";
 		PreparedStatement showStatement = conn.prepareStatement(query);
