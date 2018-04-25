@@ -9,6 +9,7 @@
   </title>
   <%-- This is from Bootstrap for styling --%>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="shortcut icon" href="#" />
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
   </head>
@@ -21,12 +22,38 @@
     <p class="lead">Welcome to Kwizler</p>
     <hr class="my-4">
     <p>Make studying fun with our online vocabulary learning tool!</p>
-    </div>
-<div class="SetDesc">
+  </div>
+
+<%--
 </br>
 Available Vocabulary Categories:
 </br>
-</div>
+--%>
+				    
+
+<ul class="nav nav-pills mb-3 nav-justified nav-custom" role="tabList">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" href="#Math" role="tab" aria-controls="Math" aria-selected="true">Math</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#CS" role="tab" aria-controls="CS" aria-selected="false">Computer Science</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#SAT" role="tab" aria-controls="SAT" aria-selected="false">SAT Prep Words</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#History" role="tab" aria-controls="History" aria-selected="false">History</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#Lang" role="tab" aria-controls="Lang" aria-selected="false">Foreign Language</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#Misc" role="tab" aria-controls="Misc" aria-selected="false">Miscellaneous</a>
+  </li>
+</ul>
+
+
+<%--
     <div id = "Math" class = "tile">
     	</br>
 	Math
@@ -71,7 +98,8 @@ Available Vocabulary Categories:
       <div class = "catMth" style="display:none">
       	   Calculus
       </div>
-
+   --%>
+   
       <script type="text/javascript"  language="javascript">
               //ADD event listeners to each tileElement
       var tileElements = document.getElementsByClassName("tile");

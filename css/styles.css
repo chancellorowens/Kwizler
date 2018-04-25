@@ -5,7 +5,26 @@
 }
 .jumbotron  {
     background-color: teal;
+    color: #e0cbcb;
 }
+
+.nav-custom {
+    
+    font-size: 17pt;			  
+}
+.nav-item , .nav-link {
+    color: #330000;
+}
+
+.nav-item {
+    background-color:#ffcccc;
+    padding: 15px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color:#bfbfbf;
+}
+
 .tile {
     display:inline-block;
     width:205px;
