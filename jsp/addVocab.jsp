@@ -20,11 +20,20 @@
 	<% String [][] vocabSet=new String [2][25];
 	   for( int i=0; i<25; i++){
 	   	int termValue=i+1;
-	   	vocabSet[0][i]=request.getParameter("term"+termValue);
-		vocabSet[1][i]=request.getParameter("definition"+termValue);
+		String param1="term"+termValue;
+		String param2="definition"+termValue;
+		if(request.getParameter(param1)!=null){
+		vocabSet[0][i]=request.getParameter(param1).toString();
+		}
+		if(request.getParameter(param2)!=null){
+		vocabSet[1][i]=request.getParameter(param2).toString();
+		}
 	   }//for
 	   Kwizler myKwiz= new Kwizler();
-	   myKwiz.setVocabList(request.getParameter("VocabSetName"), vocabSet);
+	   String vocabSetName= request.getParameter("VocabSetName")+"";
+	   if(vocabSet!=null){
+	   myKwiz.setVocabList(vocabSetName, vocabSet);
+	   }
 	   %>
 
 
