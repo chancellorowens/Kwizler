@@ -17,36 +17,56 @@
 <script>
 
 	function createdSet(){
-	<% String [][] vocabSet=new String [2][25];
-	   for( int i=0; i<25; i++){
-	   	int termValue=i+1;
-		String param1="term"+termValue;
-		String param2="definition"+termValue;
-		if(request.getParameter(param1)!=null){
-		vocabSet[0][i]=request.getParameter(param1).toString();
-		}
-		if(request.getParameter(param2)!=null){
-		vocabSet[1][i]=request.getParameter(param2).toString();
-		}
-	   }//for
-	   Kwizler myKwiz= new Kwizler();
-	   String vocabSetName= request.getParameter("VocabSetName")+"";
-	   if(vocabSet!=null){
+		 var vocabSet= new Array();
+		     <%int counter=1;%>
+		 for(var i=0; i<25; i++){
+		 	 
+		 	 var termValue=i+1;
+		 	 var param1= "term"+termValue;
+			 var param2="definition"+definitionValue;
+			 
+		 	 vocabSet[0][i]=<%=request.getParameter("term"+counter)%>;
+			 vocabSet[1][i]=<%=request.getParameter("definition"+counter)%>;
+			 <%counter++;%>
+			 }
+		var vocabSetName=<%=request.getParameter("VocabSetName")%>;
+		
+
+	   var  myKwiz= new Kwizler();
+	   
 	   myKwiz.setTableName(vocabSetName);
 	   myKwiz.setVocabSet(vocabSet);
 	   myKwiz.setVocabList();
-	   }
-	   %>
+	   
+	   
 
 
 	}//createdSet
 
 </script>
+
+
 <html>
+<%
+if(request.getParameter("vocabSetName")!=null){
+Kwizler myKwiz= new Kwizler();
+	myKwiz.setTableName(request.getParameter("vocabSetName"));
+	String [][] vocabularySet= new String [2][25];
+	for(int i=0; i<25; i++){
+		int j=i+1;
+		vocabularySet[0][i]=request.getParameter("term"+j);
+		vocabularySet[1][i]=request.getParameter("definition"+j);
+	}
+	myKwiz.setVocabSet(vocabularySet);
+	myKwiz.setVocabList();
+}
+
+%>
+<%System.out.println("I am able to print messages");%>
 
 <h1>Vocabulary Set:</h1>
 <h2>Please add in 25 terms and definitions.</h2>
-<form action=addVocab.jsp method=GET>
+<form   method=GET>
 	Set Name: <input type="text" name="VocabSetName">
 	</br>
 	</br>

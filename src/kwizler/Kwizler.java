@@ -45,8 +45,8 @@ public class Kwizler {
 	    tableName="test";
 	}
 	*/
-		String tableName= getTableName();
-		String [][] vocab= getVocabSet();
+		String tableName= currentTableName;
+		String [][] vocab= vocabList;
 		//		tableName="newTableTest";
 	Connection conn= db.getConn();
 		String query = "CREATE TABLE ? (term varchar(255), definition varchar(255));";
