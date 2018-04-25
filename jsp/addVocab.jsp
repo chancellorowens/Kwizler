@@ -14,6 +14,8 @@
 	}
 
 </style>
+<jsp:useBean id="myKwiz" class="kwizler.Kwizler"></jsp:useBean>
+<jsp:setProperty name="myKwiz" property="*"/>
 <script>
 
 	function createdSet(){
@@ -25,14 +27,14 @@
 		 	 var param1= "term"+termValue;
 			 var param2="definition"+definitionValue;
 			 
-		 	 vocabSet[0][i]=""+<%=request.getParameter("term"+counter)%>;
-			 vocabSet[1][i]=""+<%=request.getParameter("definition"+counter)%>;
+		 	 vocabSet[0][i]=<%=request.getParameter(counter)%>;
+			 <%definitionCounter=100+counter%>
+			 vocabSet[1][i]=<%=request.getParameter(definitionCounter)%>;
 			 <%counter++;%>
 			 }
 		var vocabSetName=""+<%=request.getParameter("VocabSetName")%>;
-		
+		<!--vocabSetName="OnlyWorksFromJsp";-->
 
-	   var  myKwiz= new Kwizler();
 	   
 	   myKwiz.setTableName(vocabSetName);
 	   myKwiz.setVocabSet(vocabSet);
@@ -40,28 +42,13 @@
 	   
 	   
 
+console.log(vocabSetName);
 
 	}//createdSet
 
 </script>
 
-
 <html>
-<%
-if(request.getParameter("vocabSetName")!=null){
-Kwizler myKwiz= new Kwizler();
-	myKwiz.setTableName(request.getParameter("vocabSetName"));
-	String [][] vocabularySet= new String [2][25];
-	for(int i=0; i<25; i++){
-		int j=i+1;
-		vocabularySet[0][i]=request.getParameter("term"+j);
-		vocabularySet[1][i]=request.getParameter("definition"+j);
-	}
-	myKwiz.setVocabSet(vocabularySet);
-	myKwiz.setVocabList();
-}
-
-%>
 <%System.out.println("I am able to print messages");%>
 
 <h1>Vocabulary Set:</h1>
@@ -76,100 +63,104 @@ Kwizler myKwiz= new Kwizler();
 
 	</br>
 	</br>
-	<input type="text" name="term1" placeholder="Term">
-	<input type="text" name="definition1" placeholder="Definition">
+	<input type="text" name="1" placeholder="Term">
+	<input type="text" name="101" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term2" placeholder="Term">
-	<input type="text" name="definition2" placeholder="Definition">
+	<input type="text" name="2" placeholder="Term">
+	<input type="text" name="102" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term4" placeholder="Term">
-	<input type="text" name="definition4" placeholder="Definition">
+	<input type="text" name="3" placeholder="Term">
+	<input type="text" name="103" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term5" placeholder="Term">
-	<input type="text" name="definition5" placeholder="Definition">
+	<input type="text" name="4" placeholder="Term">
+	<input type="text" name="104" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term6" placeholder="Term">
-	<input type="text" name="definition6" placeholder="Definition">
+	<input type="text" name="5" placeholder="Term">
+	<input type="text" name="105" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term7" placeholder="Term">
-	<input type="text" name="definition7" placeholder="Definition">
+	<input type="text" name="6" placeholder="Term">
+	<input type="text" name="106" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term8" placeholder="Term">
-	<input type="text" name="definition8" placeholder="Definition">
+	<input type="text" name="7" placeholder="Term">
+	<input type="text" name="107" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term9" placeholder="Term">
-	<input type="text" name="definition9" placeholder="Definition">
+	<input type="text" name="8" placeholder="Term">
+	<input type="text" name="108" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term10" placeholder="Term">
-	<input type="text" name="definition10" placeholder="Definition">
+	<input type="text" name="9" placeholder="Term">
+	<input type="text" name="109" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term11" placeholder="Term">
-	<input type="text" name="definition11" placeholder="Definition">
+	<input type="text" name="10" placeholder="Term">
+	<input type="text" name="110" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term12" placeholder="Term">
-	<input type="text" name="definition12" placeholder="Definition">
+	<input type="text" name="11" placeholder="Term">
+	<input type="text" name="111" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term13" placeholder="Term">
-	<input type="text" name="definition13" placeholder="Definition">
+	<input type="text" name="12" placeholder="Term">
+	<input type="text" name="112" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term14" placeholder="Term">
-	<input type="text" name="definition14" placeholder="Definition">
+	<input type="text" name="13" placeholder="Term">
+	<input type="text" name="113" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term15" placeholder="Term">
-	<input type="text" name="definition15" placeholder="Definition">
+	<input type="text" name="14" placeholder="Term">
+	<input type="text" name="114" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term16" placeholder="Term">
-	<input type="text" name="definition16" placeholder="Definition">
+	<input type="text" name="15" placeholder="Term">
+	<input type="text" name="115" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term17" placeholder="Term">
-	<input type="text" name="definition17" placeholder="Definition">
+	<input type="text" name="16" placeholder="Term">
+	<input type="text" name="116" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term18" placeholder="Term">
-	<input type="text" name="definition18" placeholder="Definition">
+	<input type="text" name="17" placeholder="Term">
+	<input type="text" name="117" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term19" placeholder="Term">
-	<input type="text" name="definition19" placeholder="Definition">
+	<input type="text" name="18" placeholder="Term">
+	<input type="text" name="118" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term20" placeholder="Term">
-	<input type="text" name="definition20" placeholder="Definition">
+	<input type="text" name="19" placeholder="Term">
+	<input type="text" name="119" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term21" placeholder="Term">
-	<input type="text" name="definition21" placeholder="Definition">
+	<input type="text" name="20" placeholder="Term">
+	<input type="text" name="120" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term22" placeholder="Term">
-	<input type="text" name="definition22" placeholder="Definition">
+	<input type="text" name="21" placeholder="Term">
+	<input type="text" name="121" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term23" placeholder="Term">
-	<input type="text" name="definition23" placeholder="Definition">
+	<input type="text" name="22" placeholder="Term">
+	<input type="text" name="122" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term24" placeholder="Term">
-	<input type="text" name="definition24" placeholder="Definition">
+	<input type="text" name="23" placeholder="Term">
+	<input type="text" name="123" placeholder="Definition">
 	</br>
 	</br>
-	<input type="text" name="term25" placeholder="Term">
-	<input type="text" name="definition25" placeholder="Definition">
+	<input type="text" name="24" placeholder="Term">
+	<input type="text" name="124" placeholder="Definition">
+	</br>
+	</br>
+	<input type="text" name="25" placeholder="Term">
+	<input type="text" name="125" placeholder="Definition">
 	</br>
 	</br>
 
