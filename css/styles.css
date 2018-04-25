@@ -9,20 +9,16 @@
 }
 
 .nav-custom {
-    
+    color: black;
     font-size: 17pt;			  
 }
-.nav-item , .nav-link {
-    color: #330000;
-}
 
-.nav-item {
-    background-color:#ffcccc;
-    padding: 15px;
+.nav-link {
+    color: black;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color:#bfbfbf;
+    background-color:#ff3333;
 }
 
 .tile {

@@ -30,11 +30,11 @@ public class Kwizler {
 	}
     }
     public String [][] getVocabSet(){
-	returns vocabList;
+	return vocabList;
     }
 
     public String  getTableName(){
-	returns currentTableName;
+	return currentTableName;
     }
     /*                                                                                                                 
       Creates a new table filled with vocab words and definitions for a anew sub-category                             
