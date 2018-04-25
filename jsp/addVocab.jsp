@@ -25,11 +25,11 @@
 		 	 var param1= "term"+termValue;
 			 var param2="definition"+definitionValue;
 			 
-		 	 vocabSet[0][i]=<%=request.getParameter("term"+counter)%>;
-			 vocabSet[1][i]=<%=request.getParameter("definition"+counter)%>;
+		 	 vocabSet[0][i]=""+<%=request.getParameter("term"+counter)%>;
+			 vocabSet[1][i]=""+<%=request.getParameter("definition"+counter)%>;
 			 <%counter++;%>
 			 }
-		var vocabSetName=<%=request.getParameter("VocabSetName")%>;
+		var vocabSetName=""+<%=request.getParameter("VocabSetName")%>;
 		
 
 	   var  myKwiz= new Kwizler();
